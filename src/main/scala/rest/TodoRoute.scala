@@ -49,13 +49,15 @@ class TodoRoute extends JsonSupport {
           entity(as[Todo]) { (todo: Todo) =>
             complete(StatusCodes.Created)
           }
-        } ~
+        }
+    } ~
+      path("todo" / IntNumber) { (todoId: Int) =>
         put {
           entity(as[Todo]) { (todo: Todo) =>
             complete(StatusCodes.Created)
           }
         }
-    }
+      }
   }
 
 }

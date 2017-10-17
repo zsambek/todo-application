@@ -54,7 +54,7 @@ class TodoRoute extends JsonSupport {
       path("todo" / IntNumber) { (todoId: Int) =>
         put {
           entity(as[Todo]) { (todo: Todo) =>
-            complete(StatusCodes.Created)
+            complete(StatusCodes.NoContent)
           }
         }
       }
